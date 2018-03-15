@@ -10,7 +10,9 @@ const incrementor = () => {
 incrementor.toString = () => incrementor.number;
 incrementor.number = 0;
 
-const asyncIncrementor = () => {};
+const asyncIncrementor = async function f(resolve) {return Promise.resolve(++asyncIncrementor.number); };
+//asyncIncrementor.toString = () => asyncIncrementor.number;
+asyncIncrementor.number = 0;
 const createIncrementer = () => {};
 
 // return same argument not earlier than in one second, and not later, than in two
